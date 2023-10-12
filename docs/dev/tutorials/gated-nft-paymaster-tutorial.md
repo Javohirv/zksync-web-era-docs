@@ -653,7 +653,7 @@ We are ready to implement our paymaster hook which will be used if the connected
 The requirements outline we need to prepare and return the `paymasterParams` to then be passed alongside the `setGreeting` transaction.
 
 ```typescript
-const usePaymaster = async ({ greeterInstance, message, price }: PaymasterProps) => {
+const usePaymaster = async ({hd greeterInstance, message, price }: PaymasterProps) => {
   let gasPrice = ethers.utils.parseEther(price);
   const paymasterParams = utils.getPaymasterParams(PAYMASTER_CONTRACT_ADDRESS, {
     type: "General",
